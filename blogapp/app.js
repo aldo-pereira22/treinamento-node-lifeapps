@@ -5,7 +5,8 @@ const app = express()
 const admin = require('./routes/admin')
 const path = require('path')
 // const path = require('path')
-// const mongoose = require('mongoose')
+const mongoose = require('mongoose')
+const { Console } = require('console')
 
 // configurações
     //Body-Parser
@@ -18,7 +19,12 @@ const path = require('path')
         app.set('view engine', 'handlebars');
 
     // Mongoose
-
+        mongoose.Promise = global.Promise;
+        mongoose.connect("mongodb://localhost/blogapp").then( ()=> {
+            console.log("Conecetado ao banco de dados!!! ")
+        }).catch( (err) => {
+            console.log("Erro ao conecetar ao banco de dados!"+err)
+        })
 
     //public 
 //     app.use(express.static(path.join(__dirname, "public")))
