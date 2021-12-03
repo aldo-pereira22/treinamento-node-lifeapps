@@ -6,9 +6,27 @@ const admin = require('./routes/admin')
 const path = require('path')
 // const path = require('path')
 const mongoose = require('mongoose')
-const { Console } = require('console')
+const sesion = require('express-session')
+const flash = require('connect-flash')
+const session = require('express-session')
 
 // configurações
+    // sessão 
+        app.use(session({
+            secret:'cursonode',
+            resave: true,
+            saveUninitialized: true
+
+        }))
+        app.use(flash())
+
+    // MiddleWare
+        app.use((req, res, next)=>{
+            res.locals.success_msg = req.flash("success_msg")
+            res.locals.erro_msg = req.flash("error_msg")
+            next()
+        })
+
     //Body-Parser
         app.use(bodyParser.urlencoded({extended:true}))
         app.use(bodyParser.json())
@@ -32,6 +50,10 @@ const { Console } = require('console')
     console.log("caminho+"+ __dirname);
     app.use(express.static(path.join(__dirname, "public")))
 
+    // app.use((req, res, next) => {
+    //     console.log("Oi eu sou um midlleware")
+    //     next()
+    // })
 // Rotas 
     app.use('/admin', admin)
 
