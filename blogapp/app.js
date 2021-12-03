@@ -35,6 +35,8 @@ const session = require('express-session')
         // app.engine('handlebars',handlebars({defaultLayout: 'main'}))
         app.engine('handlebars', handlebars.engine({defaultLayout: 'main'}));
         app.set('view engine', 'handlebars');
+ 
+
 
     // Mongoose
         mongoose.Promise = global.Promise;
