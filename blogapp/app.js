@@ -40,7 +40,7 @@ const session = require('express-session')
 
     // Mongoose
         mongoose.Promise = global.Promise;
-        mongoose.connect("mongodb://localhost/banco-teste").then( ()=> {
+        mongoose.connect("mongodb://localhost/blogapp").then( ()=> {
             console.log("Conecetado ao banco de dados!!! ")
         }).catch( (err) => {
             console.log("Erro ao conecetar ao banco de dados!"+err)
