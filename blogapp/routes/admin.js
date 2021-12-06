@@ -95,7 +95,7 @@ router.post("/categorias/edit", (req, res)=> {
         categoria.nome = req.body.nome
         categoria.slug = req.body.slug
         
-        categoria.save().then(()=>{
+        cgitategoria.save().then(()=>{
             res.flash("success_msg", "categoria editada com sucesso!")
             res.redirect("/admin/categorias")
         }).catch((err)=> {
@@ -109,4 +109,16 @@ router.post("/categorias/edit", (req, res)=> {
     })
 
 })
+
+
+
+router.post("/categorias/deletar", (req, res)=> {
+    Categoria.remove({_id:req.body.id}).then( ()=> {
+        req.flash("success_msg", "categoria excluida com sucesso!")
+        res.redirect("/admin/categorias")
+    }).catch((err)=> {
+        req.flash("error_msg", "Houve um erro ao deletar uma categoria")
+        res.redirect("/admin/categorias")
+    })
+})  
 module.exports = router
