@@ -85,6 +85,28 @@ router.get("/categorias/edit/:id", (req, res)=> {
     }).catch((err)=> {
         req.flash("error_msg", "Esta categoria não existe")
         res.redirect("/admin/categorias")
+        console.log("Está categoria não existe!!")
     })
+})
+
+router.post("/categorias/edit", (req, res)=> {
+    Categoria.findOne({_id:req.body.id}).then((categoria)=> {
+        
+        categoria.nome = req.body.nome
+        categoria.slug = req.body.slug
+        
+        categoria.save().then(()=>{
+            res.flash("success_msg", "categoria editada com sucesso!")
+            res.redirect("/admin/categorias")
+        }).catch((err)=> {
+            req.flash("error_msg", "Houve um erro interno ao salvar  a edição da categoria")
+            res.redirect("/admin/categorias")
+        })
+
+    }).catch((err)=> {
+        req.flash("error_msg", "Houve um erro ao editar")
+        res.redirect("/admin/categorias")
+    })
+
 })
 module.exports = router
