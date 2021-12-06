@@ -4,7 +4,7 @@ const Schema = mongoose.Schema
 
 const Postagem = new Schema({
     titulo:{
-        String:,
+        Type:String,
         required:true
     },
     slug: {
