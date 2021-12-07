@@ -1,30 +1,29 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
-
 const Postagem = new Schema({
     titulo:{
         Type:String,
-        required:true
+        // required:true
     },
     slug: {
         type: String,
-        required:true
+        // required:true
     },
 
     descricao: {
         type:String,
-        required:true
+        // required:true
     },
 
     conteudo: {
         type:String,
-        required:true
+        // required:true
     },
     categoria: {
         type:Schema.Types.ObjectId,
         ref:"categorias",
-        required:true
+        // required:true
 
     },
     data: {

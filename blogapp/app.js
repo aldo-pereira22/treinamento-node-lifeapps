@@ -6,7 +6,6 @@ const admin = require('./routes/admin')
 const path = require('path')
 // const path = require('path')
 const mongoose = require('mongoose')
-const sesion = require('express-session')
 const flash = require('connect-flash')
 const session = require('express-session')
 
