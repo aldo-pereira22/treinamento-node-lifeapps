@@ -42,7 +42,7 @@ const session = require('express-session')
         mongoose.connect("mongodb://localhost/blogapp").then( ()=> {
             console.log("Conecetado ao banco de dados!!! ")
         }).catch( (err) => {
-            console.log("Erro ao conecetar ao banco de dados!"+err)
+            console.log("Erro ao conectar ao banco de dados!"+err)
         })
 
     //public 
@@ -60,6 +60,12 @@ const session = require('express-session')
 
 const PORT = 8081
 
-app.listen(PORT, ()=> {
-    console.log('servidor rodando!!! no endereço: localhost:8081/admin'+PORT)
+app.listen(PORT, (err)=> {
+    console.log("Servidor rodando!")
 })
+
+
+
+
+
+

@@ -166,4 +166,10 @@ router.post("/postangens/nova", (req, res) => {
         })
     }
 })
+
+
+
+router.get('/leitura', (req, res) => {
+    res.render('admin/leitura')
+})
 module.exports = router
