@@ -3,26 +3,30 @@ const router  = express.Router();
 const fs = require('fs')
 const readline = require('readline')
 
-const caminho = fs.createReadStream('cidades.csv')
+const caminho = fs.createReadStream('teste1.csv')
+
 
 const rl = readline.createInterface({
     input: caminho
 })
 
-let cidades  = []
+// let cidades  = []
 
+cidades = []
 rl.on('line', (line) => {
-    cidades.push(line)
+    if(!line) return;
+     cidades = line.split(',')
+    console.log(cidades)
 })
 
 rl.on('close', () => {
-     const c1 = cidades.map( x => x.split(',')[1]).filter(x => x.indexOf('Rio') > -1)
- 
+
 })
 
 
-router.get("/", (req, res) => {
-    res.send(" <h2>  Bem Vindo! </h2>")
+router.get("/cidades/:busca", (req, res) => {
+    const {busca} = req.params
+    console.log(busca)
 })
 
 module.exports = router

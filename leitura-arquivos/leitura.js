@@ -1,34 +1,42 @@
+const express = require("../blogapp/node_modules/express");
+const app = express();
+const bodyParser = require('../blogapp/node_modules/body-parser')
 const fs = require('fs')
 const readline = require('readline')
+const router  = express.Router();
 
-const caminho = fs.createReadStream('teste.csv')
+
+
+// Configurações
+
+   //Body-Parser
+   app.use(bodyParser.urlencoded({extended:true}))
+   app.use(bodyParser.json())
+
+//    Caminho do arquivo
+   const caminho = fs.createReadStream('teste.csv')
 
 const rl = readline.createInterface({
     input: caminho
 })
 
-let cidades  = []
+
 rl.on('line', (line) => {
-
     if(!line) return;
-
     dados = line.split(',')
-
-    cidades = dados
-    console.log("Array: "+cidades) 
 })
 
 rl.on('close', () => {
-    // console.log(cidades)
-    // const c1 = cidades.map( x => x.split(',')[1]).filter(x => x.indexOf('Rio') > -1)
-    // const c1 = cidades.filter()
-    // console.log("Array"+ dados)
+    console.log(cidades)
+    const c1 = cidades.map( x => x.split(',')[1]).filter(x => x.indexOf('Rio') > -1)
+    const c1 = cidades.filter()
+    console.log("Array"+ dados)
 })
 
+
+
+
 // console.log("Array"+ dados)
-console.log(cidades)
-
-
 
 
 // console.log("CAMINHOOOO:" +caminho)
