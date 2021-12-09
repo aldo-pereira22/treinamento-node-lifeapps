@@ -5,6 +5,9 @@
                     <FormTodo v-on:add-todo="addComment">  </FormTodo>
                     
                     <div class="list-group">
+                        <p v-if="comments.length <= 0">
+                            Sem comentários...
+                        </p>
                         <div class="list-group-item" v-for=" (comment, index) in allComments" :key="index">
                             <span class="comment__author"> Autor: <Strong> {{comment.name}} </Strong></span>
                             <p> {{ comment.message }}</p>
