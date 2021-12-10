@@ -14,28 +14,28 @@
             <li>  Produtos    </li>
           </router-link>
       </ul> -->
-    <ul class="nav">
-        <li class="nav-item">
-            <router-link class="nav-link" to="/">
-                    Home               
-            </router-link>
-        </li>
-        <li class="nav-item">
-            <router-link class="nav-link" to="/about">
-                    Sobre nós               
-            </router-link>
-        </li>
-                <li class="nav-item">
-            <router-link class="nav-link" to="categorias">
-                    Categorias               
-            </router-link>
-        </li>
-                <li class="nav-item">
-            <router-link class="nav-link" to="produtos">
-                    Produtos               
-            </router-link>
-        </li>
-    </ul>
+        <ul class="nav">
+            <li class="nav-item">
+                <router-link class="nav-link" to="/">
+                        Home               
+                </router-link>
+            </li>
+            <li class="nav-item">
+                <router-link class="nav-link" to="/about">
+                        Sobre nós               
+                </router-link>
+            </li>
+                    <li class="nav-item">
+                <router-link class="nav-link" to="categorias">
+                        Categorias               
+                </router-link>
+            </li>
+                    <li class="nav-item">
+                <router-link class="nav-link" to="produtos">
+                        Produtos               
+                </router-link>
+            </li>
+        </ul>
   </div>
 </template>
 

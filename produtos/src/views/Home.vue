@@ -1,6 +1,9 @@
 <template>
   <div class="mt-5">
-      <h1>Home</h1>
+      <img src="" alt="">
+      <div class="items">
+
+      </div>
   </div>
 </template>
 
