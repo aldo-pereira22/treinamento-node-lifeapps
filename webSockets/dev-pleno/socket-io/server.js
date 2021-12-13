@@ -21,7 +21,7 @@ io.on('connection', (socket) => {
         // Enviar uma mensagem para todos os clientes conectados
         // Parametro 1: Nome do evento
         // Parametro 2: Mensagem
-        socket.broadcast.emit('msg', "BROADCAST: Novo usuário conecetado: "+socket.id)
+        socket.broadcast.emit('msg', msg)
 
     })
 })

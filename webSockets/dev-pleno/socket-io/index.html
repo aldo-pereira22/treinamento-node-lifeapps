@@ -12,8 +12,7 @@
     <script src="/socket.io/socket.io.js"> </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <div class="msg"></div>
-        <input type="text">
-    
+    <input type="text">    
     <h1>Socket.io</h1>
     <script>
         const socket = io()
@@ -35,9 +34,13 @@
         })
 
             $(function(){
-                $("input").keydown(function(key){
-                    console.log(key.keyCode)
+                $('input').keydown(function(key){
+                    if(key.keyCode === 13){
+                        socket.emit('msg', $(this).val());
+                        $(this).val('');
+                    }  
                 })
+                console.log("TESTE")
             })
     </script>
 </body>
