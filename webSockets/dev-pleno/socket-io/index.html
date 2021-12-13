@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Socket.io</title>
+
+</head>
+<body>
+    <script src="/socket.io/socket.io.js"> </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <div class="msg"></div>
+        <input type="text">
+    
+    <h1>Socket.io</h1>
+    <script>
+        const socket = io()
+        socket.on('connect', () => {
+            // Mensagem quando o usuário conecta ao servidor
+            $('.msg').append('<br> MENSAGEM DO CLIENTE: Cliente conectado com o id: '+socket.id+'<br>')
+
+            // Emitindo uma mensagem para o servidor!!!
+            // Primeiro parametro: nome do envento
+            // Segundo parametro a mensagem a ser enviada
+            socket.emit('msg', 'Eu sou o cliente, estou conectado com o id: '+socket.id)        
+        })
+
+        // Escutando o evento do servidor
+        // Parametro 1 nome do evento
+        // Parametro 2 
+        socket.on('msg', (msg)=> {
+            $('.msg').append(msg+'<br>')
+        })
+
+            $(function(){
+                $("input").keydown(function(key){
+                    console.log(key.keyCode)
+                })
+            })
+    </script>
+</body>
+</html>
