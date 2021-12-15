@@ -7,19 +7,19 @@ class Player{
     }
 
 
-    getName(){
+    get Name(){
         return this._name
     }
 
-    getSymbol(){
+    get Symbol(){
         return this._symbol
     }
 
-    setSymbol(symbol){
+    set Symbol(symbol){
 
         this._symbol = symbol
     }
-    
+
     get socketId(){
         return this._socketId
     }
