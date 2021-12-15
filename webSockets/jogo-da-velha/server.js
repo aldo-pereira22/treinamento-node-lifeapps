@@ -24,11 +24,10 @@ app.get('/', (req, res) => {
 })
 
 io.on('connection', (socket) => {
+
     let id = socket.id
     console.log("\nNovo cliente conectado! ID: "+id+"\n")
-    clients[id] = socket
-    console.log(clients[id])
-    
+    clients[id] = socket    
     socket.on("disconnect", ()=> {
 
         console.log("Cliente Desconectado! ID: "+id)
