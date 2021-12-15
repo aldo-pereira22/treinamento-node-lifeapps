@@ -22,9 +22,15 @@ io.on('connection', (socket) => {
         // Parametro 1: Nome do evento
         // Parametro 2: Mensagem
         socket.broadcast.emit('msg', msg)
+        socket.join('contador')
 
     })
 })
+
+let contador = 0;
+setInterval(()=> {
+    io.to('contador').emit('msg', contador++)
+}, 1000 )
 
 http.listen(3000, ()=>{
     console.log('Rodando na porta 3000:')

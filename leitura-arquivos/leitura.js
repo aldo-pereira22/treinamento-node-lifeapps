@@ -20,21 +20,31 @@ const rl = readline.createInterface({
     input: caminho
 })
 
-
+let cidades = []
 rl.on('line', (line) => {
+    let dados = []
     if(!line) return;
-    dados = line.split(',')
+    cidades = line.split(',')
+    // cidades = dados
+    console.log(cidades)
 })
 
 rl.on('close', () => {
-    console.log(cidades)
-    const c1 = cidades.map( x => x.split(',')[1]).filter(x => x.indexOf('Rio') > -1)
-    const c1 = cidades.filter()
-    console.log("Array"+ dados)
+    // console.log(cidades)
+    // const c1 = cidades.map( x => x.split(',')[1]).filter(x => x.indexOf('Rio') > -1)
+
+    // const c1 = cidades.filter()
+    // console.log("Array"+ dados)
 })
 
 
 
+function mostrarcidades() {
+    console.log(cidades)
+    
+}
+
+setTimeout(mostrarcidades, 2000);
 
 // console.log("Array"+ dados)
 
