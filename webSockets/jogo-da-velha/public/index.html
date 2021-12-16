@@ -6,14 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.socket.io/4.4.0/socket.io.min.js" integrity="sha384-1fOn6VtTq3PWwfsOrk45LnYcGosJwzMHv+Xh/Jx5303FVOXzEnw0EpLv30mtjmlj"
     crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
     <title>Jogo da velha</title>
 </head>
 <body>
+
+    <main>
         <h1>Jogo da velha</h1>
+        <div id="app">
+            <div class="register" v-if="!game && !blockRegister">
+                <input type="text" v-model="playerName" placeholder="Entre com seu nome">
+                <button @click="startGame()" class="btn">Jogar</button>
+            </div>
+        </div>
+    </main>
 
     
 
-
+    <script src="../node_modules/vue/dist/vue.js"></script>
     <script src="./js/script.js"></script>
 </body>
 </html>

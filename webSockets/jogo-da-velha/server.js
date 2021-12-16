@@ -2,6 +2,8 @@ import http from 'http'
 import express from 'express'
 import { Server } from 'socket.io';
 import ejs from 'ejs'
+import Player from './src/model/Player.js'
+import Game from './src/model/Game.js'
 
 
 
@@ -23,11 +25,23 @@ app.get('/', (req, res) => {
     return res.render('index.html')
 })
 
+const games = {}
+let unmatched = null;
 io.on('connection', (socket) => {
 
     let id = socket.id
     console.log("\nNovo cliente conectado! ID: "+id+"\n")
     clients[id] = socket    
+
+    socket.on("game.begin", (data) => {
+        const game = join(socket, data)
+        if(game.player2){
+            console.log("\nNo jogo começando!",game)
+            clients[game.player1.socketId].emit('game.begin', game)
+            clients[game.player2.socketId].emit('game.begin', game)
+
+        }
+    })
     socket.on("disconnect", ()=> {
 
         console.log("Cliente Desconectado! ID: "+id)
@@ -35,3 +49,18 @@ io.on('connection', (socket) => {
     
     })
 })
+
+const join = (socket, data) => {
+    const player = new Player(data.playerName, "X",socket.id)
+
+    if(unmatched){
+        unmatched.player2 = player;
+        games[unmatched.player2.socketId] = unmatched;
+        games[unmatched.player2.socketId] = unmatched;
+        unmatched = null
+        return games[socket.id]
+    }else {
+        unmatched = new Game(player);
+        return unmatched;
+    }
+}
