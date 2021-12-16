@@ -1,41 +1,28 @@
 <template>
   <div class="">
-      <!-- <ul>
-        <router-link to="/">   <li>    Home    </li>  </router-link>
-        <router-link to="/about" >    <li>    Sobre nós   </li>    </router-link>
 
-          <router-link to="/categorias"> 
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <div class="container-fluid">
 
-                <li>  Categorias  </li>
-          </router-link>
-
-          <router-link to="produtos"> 
-
-            <li>  Produtos    </li>
-          </router-link>
-      </ul> -->
-        <ul class="nav">
-            <li class="nav-item">
                 <router-link class="nav-link" to="/">
-                        Home               
+                    <h3> <img src="../assets/img/logo.png" alt=""> </h3>                
+                </router-link>              
+
+                <router-link class="nav-link" to="/">
+                    <h3> INICIO </h3>                
                 </router-link>
-            </li>
-            <li class="nav-item">
                 <router-link class="nav-link" to="/about">
-                        Sobre nós               
+                   <h3> SOBRE NÓS</h3>  
                 </router-link>
-            </li>
-                    <li class="nav-item">
-                <router-link class="nav-link" to="categorias">
-                        Categorias               
+                <router-link class="nav-link" to="/categorias">
+                      <h3> CATEGORIAS </h3>                
                 </router-link>
-            </li>
-                    <li class="nav-item">
-                <router-link class="nav-link" to="produtos">
-                        Produtos               
+                  
+                <router-link class="nav-link" to="/produtos">
+                  <h3> PRODUTOS </h3>                  
                 </router-link>
-            </li>
-        </ul>
+          </div>
+    </nav>
   </div>
 </template>
 
@@ -46,5 +33,7 @@ export default {
 </script>
 
 <style  scoped>
-
+  img {
+    width: 100px;
+  }
 </style>

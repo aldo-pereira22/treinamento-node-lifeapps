@@ -1,0 +1,72 @@
+[
+    {
+      "id": 1,
+      "name": "Mac Book Pro",
+      "amount": 10,
+      "price": 6200.0,
+      "category": {
+        "id": 3,
+        "name": "Eletrônicos"
+      }
+    },
+    {
+      "id": 2,
+      "name": "Computador",
+      "amount": 10,
+      "price": 5200.0,
+      "category": {
+        "id": 3,
+        "name": "Eletrônicos"
+      }
+    },
+    {
+      "id": 3,
+      "name": "Lápis",
+      "amount": 10,
+      "price": 1.0,
+      "category": {
+        "id": 2,
+        "name": "Papelaria"
+      }
+    },
+    {
+      "id": 4,
+      "name": "Caneta",
+      "amount": 10,
+      "price": 3.0,
+      "category": {
+        "id": 2,
+        "name": "Papelaria"
+      }
+    },
+    {
+      "id": 5,
+      "name": "Borracha",
+      "amount": 10,
+      "price": 2.0,
+      "category": {
+        "id": 2,
+        "name": "Papelaria"
+      }
+    },
+    {
+      "id": 6,
+      "name": "Shampoo",
+      "amount": 10,
+      "price": 20.0,
+      "category": {
+        "id": 1,
+        "name": "Cosméticos"
+      }
+    },
+    {
+      "id": 7,
+      "name": "Sabonete",
+      "amount": 20,
+      "price": 5.0,
+      "category": {
+        "id": 1,
+        "name": "Cosméticos"
+      }
+    }
+]

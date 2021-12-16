@@ -1,10 +1,14 @@
 <template>
+<div class="">
+
   <div id="app" class="container">
+    <Menu />     
+    <hr>
     <div id="nav">
-      <Menu />     
     </div>
     <router-view/>
   </div>
+</div>
 </template>
 
 <script>
@@ -20,5 +24,11 @@ import Menu from './components/Menu.vue'
 
 
 <style>
+  /* .container {
+    background-color:#ffff;
+  } */
 
+  h1 {
+    text-align: center;
+  }
 </style>
