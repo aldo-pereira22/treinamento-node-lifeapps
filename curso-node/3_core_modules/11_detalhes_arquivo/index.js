@@ -1,5 +1,5 @@
 const fs = require('fs')
-
+const os = require('os')
 fs.stat('novo_arquivo.txt', (err, stats) => {
     if(err){
         console.log(err)
@@ -13,6 +13,6 @@ fs.stat('novo_arquivo.txt', (err, stats) => {
     console.log(stats.ctime)
     console.log(stats.size)
 
-    
+    console.log("CPU: "+os.cpus)
 
 })
