@@ -1,18 +1,22 @@
 const express = require('express')
 const router = express.Router()
-
+const {curso} = require('../models')
 const listaCursos = []
 
-router.get('/', (req, res) => {
+router.get('/', async(req, res) => {
+    const cursos =await curso.findAll()
+
     // res.send(' <h1> Lista de cursos! </h1>')
-    res.json(listaCursos)
+    res.json(cursos)
 })
 
 
-router.post('/', (req, res) => {
+router.post('/', async(req, res) => {
     const dadosCursos = req.body
-    console.log(dadosCursos)
-    listaCursos.push(dadosCursos)
+    const nome = "AGRONOMIA"
+    const ch = 3000
+    await curso.create({nome, ch})
+
     res.send("Curso adicionado com sucesso!")
 })
 
