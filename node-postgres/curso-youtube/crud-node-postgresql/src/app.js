@@ -2,8 +2,10 @@ const express = require('express')
 const routers = require('./api/index.js')
 const app = express()
 const {sequelize} = require('./models/index')
+const cors = require('cors');
 
 app.use(express.json())
+app.use(cors())
 app.use('/',routers)
 
 sequelize.sync().then(() => {

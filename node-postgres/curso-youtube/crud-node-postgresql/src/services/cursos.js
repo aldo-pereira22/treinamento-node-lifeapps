@@ -23,7 +23,7 @@ class CursoService{
             await this.curso.create({cursoDTO})
             
         } catch (error) {
-            console.log(erro.message)
+            console.log("ERRROOOOO"+erro.message)
             throw error
         }
     }

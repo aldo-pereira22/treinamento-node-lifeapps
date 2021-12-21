@@ -25,9 +25,8 @@ router.post('/',
         if(!errors.isEmpty()){
             return res.status(400).json({errors: errors.array()})
         }
-    const dadosCursos = req.body
-    const nome = "AGRONOMIA"
-    const ch = 3000
+    const {nome, ch} = req.body
+    console.log("NOMEEE"+ nome + "\nCARGA HORÀRIA: "+ch)
     try {
         await cursoService.adicioar({nome, ch})
         res.status(201).send("Curso adicionado com sucesso!")
