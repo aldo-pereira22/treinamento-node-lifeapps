@@ -1,7 +1,8 @@
 const curso = (sequelize, DataTypes) => {
     const Curso = sequelize.define('Curso', {
         nome: {
-            type: DataTypes.STRING
+            type: DataTypes.STRING,
+            unique: true
         },
         ch: {
             type: DataTypes.INTEGER
