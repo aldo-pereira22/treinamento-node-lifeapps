@@ -1,3 +1,4 @@
+
 class CursoService{
     constructor(CursoModel){
         this.curso = CursoModel
@@ -10,6 +11,14 @@ class CursoService{
     }
 
     async adicioar(cursoDTO){
+        const curso = await this.curso.findOne({
+            where:{
+                nome: cursoDTO.nome
+            }
+        })
+        if(curso != null){
+            throw new Error('Ja existe um curso cadastrado com esse nome')
+        }
         try {
             await this.curso.create({cursoDTO})
             
