@@ -1,0 +1,14 @@
+{
+  "name": "crud-node-postgresql",
+  "version": "1.0.0",
+  "description": "Curso do youtube para a integracao do node com o postgresql",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Aldo Pereira",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.2"
+  }
+}
