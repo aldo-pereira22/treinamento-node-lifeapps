@@ -3,6 +3,8 @@ const hb = require('express-handlebars')
 const conn = require('./db/conn')
 
 const User = require('./models/User')
+const Address = require('./models/Address')
+
 
 const app = express()
 
@@ -90,9 +92,9 @@ app.get('/', async (req, res) => {
     res.render('home', {users: users})
 })
 
-conn.sync()
+// conn.sync()
 // Força a recriação da tabela
-// conn.sync({force:true}) 
+conn.sync({force:true}) 
     .then(() => {
     console.log("Conectado ao Banco de Dados!")
     app.listen(3000)

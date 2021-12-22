@@ -3,6 +3,8 @@ const hb = require('express-handlebars')
 const conn = require('./db/conn')
 
 const User = require('./models/User')
+const Address = require('./models/Address')
+
 
 const app = express()
 
@@ -82,7 +84,23 @@ app.post('/users/update', async (req, res) => {
     await User.update(userData, {where: {id:id}})
     res.redirect('/')
 })
+app.post('/address/create', async(req, res) => {
+    const UserId = req.body.UserId
+    const street = req.body.street
+    const number = req.body.number
+    const city = req.body.city
 
+    const address = {
+        UserId,
+        street,
+        number,
+        city
+    }
+
+    await Address.create(address)
+    res.redirect(`/users/edit/${UserId}`)
+
+})
 app.get('/', async (req, res) => {
 
     const users = await User.findAll({raw:true})
