@@ -1,5 +1,19 @@
 <template>
   <div class="mt-5">
-    <h1>This is an about page</h1>
+    <h1>Cadastrar</h1>
+
+    <Cadastrar /> 
+
   </div>
 </template>
+
+<script>
+import Cadastrar from '../components/cadastro/Cadastro.vue'
+
+
+  export default {
+    components:{
+      Cadastrar
+    }
+  }
+</script>

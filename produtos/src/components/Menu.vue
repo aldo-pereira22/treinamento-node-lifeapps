@@ -5,14 +5,14 @@
           <div class="container-fluid">
 
                 <router-link class="nav-link" to="/">
-                    <h3> <img src="../assets/img/logo.png" alt=""> </h3>                
+                    <h3> <img src="../assets/img/artigo.png" alt=""> </h3>                
                 </router-link>              
 
                 <router-link class="nav-link" to="/">
                     <h3> INICIO </h3>                
                 </router-link>
                 <router-link class="nav-link" to="/about">
-                   <h3> SOBRE NÓS</h3>  
+                   <h3> CADASTRAR</h3>  
                 </router-link>
                 <router-link class="nav-link" to="/categorias">
                       <h3> CATEGORIAS </h3>                
