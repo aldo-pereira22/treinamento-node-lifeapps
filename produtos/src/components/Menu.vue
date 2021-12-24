@@ -14,13 +14,13 @@
                 <router-link class="nav-link" to="/about">
                    <h3> CADASTRAR</h3>  
                 </router-link>
-                <router-link class="nav-link" to="/categorias">
+                <!-- <router-link class="nav-link" to="/categorias">
                       <h3> CATEGORIAS </h3>                
-                </router-link>
+                </router-link> -->
                   
-                <router-link class="nav-link" to="/produtos">
+                <!-- <router-link class="nav-link" to="/produtos">
                   <h3> PRODUTOS </h3>                  
-                </router-link>
+                </router-link> -->
           </div>
     </nav>
   </div>
