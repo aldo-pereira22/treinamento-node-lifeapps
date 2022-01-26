@@ -3,6 +3,7 @@ const path = require('path')
 const http = require('http')
 const socketIo = require('socket.io')
 const { Socket } = require('dgram')
+const { connect } = require('http2')
 
 const app = express()
 const server = http.createServer(app)
@@ -22,5 +23,9 @@ io.on('connection', (socket) => {
         console.log(usuariosConectados)
 
         socket.emit('user-ok', usuariosConectados)
+        socket.broadcast.emit('list-update', {
+            joined: username,
+            list: usuariosConectados
+        })
     });
 })

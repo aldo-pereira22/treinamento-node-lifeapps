@@ -42,3 +42,8 @@ socket.on('user-ok', (list) => {
     renderUserList();
 
 })
+
+socket.on('list-update', (data) => {
+    userList = data.list
+    renderUserList();
+})
