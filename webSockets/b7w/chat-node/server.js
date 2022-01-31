@@ -2,9 +2,6 @@ const express = require('express')
 const path = require('path')
 const http = require('http')
 const socketIo = require('socket.io')
-const { Socket } = require('dgram')
-const { connect } = require('http2')
-
 const app = express()
 const server = http.createServer(app)
 const io = socketIo(server)
@@ -28,4 +25,13 @@ io.on('connection', (socket) => {
             list: usuariosConectados
         })
     });
+    socket.on('disconnect', () => {
+        usuariosConectados = usuariosConectados.filter(u => u != socket.username)
+        console.log(usuariosConectados)
+
+        socket.broadcast.emit('list-update', {
+            left: socket.username,
+            list: usuariosConectados
+        })
+    })
 })
